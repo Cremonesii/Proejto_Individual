@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+}
+
+:root {
+    --tamanho-header: 80px;
+    --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-footer: 65px;
+  }
+  
+  .container {
+    display: flex;
+    width: 80%;
+    margin: auto;
+  }
+  
+  .header {
+    height: var(--tamanho-header);
+    border-bottom: 2px solid red;
+  }
+  
+  .header .container {
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .header a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .agora {
+    font-weight: 800;
+  }
+  
+  .navbar {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    color: black;
+  }
+  
+  .titulo{
+    width: fit-content;
+    font-weight: 500;
+    width: 210px;
+    height: 210px;
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+
+  .banner {
+    height: var(--tamanho-banner);
+    color: white;
+    background-image: url('PlanodeFundo.png');
+    background-size: cover;
+    align-items: center;
+    display: flex;
+  }
+  
+  .banner .container {
+    justify-content: right;
+    align-items: center;
+    height: 100%;
+    padding-right: 20%;
+  }
+    
+  .banner .container b  {
+    color: red;
+  }
+  
+
+  
