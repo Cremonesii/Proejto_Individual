@@ -11,11 +11,12 @@
   <script src="./js/sessao.js"></script>
 
   <link rel="stylesheet" href="./css/style.css" />
-  <link rel="icon" href="./assets/logo2.png">
+  <link rel="icon" href="./assets/logo.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
-<body onload="listar()">
+<body>
+  <!--header inicio-->
   <!--header inicio-->
   <div class="header">
     <div class="container">
@@ -39,23 +40,19 @@
   <form class="form-control" action="">
     <p class="title">Cadastro</p>
     <div class="input-field">
-      <input required="" class="input" type="text" id="input_email"/>
+      <input required="" class="input" type="text" id="email_input"/>
       <label class="label" for="input">Email</label>
     </div>
     <div class="input-field">
-      <input required="" class="input" type="text" id="input_usuario"/>
+      <input required="" class="input" type="text" id="usuario_input"/>
       <label class="label" for="input">Usuario</label>
     </div>
     <div class="input-field">
-      <input required="" class="input" type="text" id="input_nome"/>
+      <input required="" class="input" type="text" id="nome_input"/>
       <label class="label" for="input">Nome Completo</label>
     </div>
     <div class="input-field">
-      <input required="" class="input" type="date" id="input_data"/>
-      <label class="label" for="input">Data de Nascimento</label>
-    </div>
-    <div class="input-field">
-      <input required="" class="input" type="password" id="input_senha"/>
+      <input required="" class="input" type="password" id="senha_input"/>
       <label class="label" for="input">Senha</label>
     </div>
     <button class="submit-btn">Cadastrar</button>
@@ -75,38 +72,25 @@
       <p>Timão</p>
     </div>
   </div>
-  <!--footer fim-->
 </body>
 
 </html>
 
 <script>
   function cadastrar() {
-    aguardar();
+    // aguardar();
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
-    var cpfVar = cpf_input.value;
     var senhaVar = senha_input.value;
-    var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var empresaVar = listaEmpresas.value
-    
-    var quantidade_nome = nomeVar.length;
-    var email_arroba = emailVar.indexOf('@');
-    var email_ponto = emailVar.indexOf('.');
-    var quantidade_senha = senhaVar.length;
-    var quantidade_cpf = cpfVar.length;
-
-
+    var usuarioVar = usuario_input.value;
     if (
-      nomeVar == "" || 
+      nomeVar == "" ||
       emailVar == "" ||
-      cpfVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      empresaVar == ""
+      usuarioVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -116,51 +100,6 @@
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
-    }
-
-    if (quantidade_nome <= 1) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Nome deve ter mais de 1 caracter)";
-
-      finalizarAguardar();
-      return false;
-    }
-
-    if (email_arroba < 0  || email_ponto < 0) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Email deve conter '@' e '.')";
-
-      finalizarAguardar();
-      return false;
-    }
-
-    if (quantidade_senha <= 6) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Senha deve conter mais de 6 caracters)";
-
-      finalizarAguardar();
-      return false;
-    }
-
-    if (confirmacaoSenhaVar != senhaVar) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Senha não é igual)";
-
-      finalizarAguardar();
-      return false;
-    }
-
-    if (quantidade_cpf != 12) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Cpf deve conter 12 caracters)";
-
-      finalizarAguardar();
-      return false;
     }
 
     // Enviando o valor da nova input
@@ -174,9 +113,8 @@
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
-        cpfServer: cpfVar,
         senhaServer: senhaVar,
-        empresaServer: empresaVar
+        usuarioServer: usuarioVar
       }),
     })
       .then(function (resposta) {
@@ -189,7 +127,7 @@
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
           setTimeout(() => {
-            window.location = "login.html";
+            window.location = "public/login.html";
           }, "2000");
 
           limparFormulario();
@@ -206,21 +144,21 @@
     return false;
   }
 
-  function listar() {
-    fetch("/empresas/listar", {
-      method: "GET",
-    })
-      .then(function (resposta) {
-        resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
-          });
-        });
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
-  }
+  // function listar() {
+  //   fetch("/empresas/listar", {
+  //     method: "GET",
+  //   })
+  //     .then(function (resposta) {
+  //       resposta.json().then((empresas) => {
+  //         empresas.forEach((empresa) => {
+  //           listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+  //         });
+  //       });
+  //     })
+  //     .catch(function (resposta) {
+  //       console.log(`#ERRO: ${resposta}`);
+  //     });
+  // }
 
   function sumirMensagem() {
     cardErro.style.display = "none";

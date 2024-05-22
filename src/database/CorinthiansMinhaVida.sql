@@ -5,7 +5,8 @@ use corinthiansMinhaVida;
 create table cadastro (
 idCadastro int primary key auto_increment,
 usuario varchar(45),
-nome varchar(75),
+nome varchar(45),
+dtNasc date,
 email varchar(75),
 senha varchar(45)
 );
