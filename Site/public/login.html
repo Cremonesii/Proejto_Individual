@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Corinthians Minha Vida | Login</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./assets/logo2.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+
+<body>
+
+    <!--Header-->
+
+    <div class="header">
+        <div class="container">
+          <img href="index.html" src="assets/logo2.png" class="titulo">
+          <ul class="navbar">
+            <a href="index.html">Inicial</a>
+            <li>|</li>
+            <li>
+            <li class="agora">
+              <a href="login.html">Login</a>
+            </li>
+            </li>
+            <li>
+              <a href="cadastro.html">Cadastro</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+
+      <form class="form-control" action="">
+        <p class="title">Login</p>
+        <div class="input-field">
+          <input required="" class="input" type="text" id="input_email" />
+          <label class="label" for="input">Email</label>
+        </div>
+        <div class="input-field">
+          <input required="" class="input" type="password" id="input_senha" />
+          <label class="label" for="input">Senha</label>
+        </div>
+        <button class="submit-btn">Login</button>
+      </form>
+    
+      <div class="footer">
+        <div class="container">
+          <p>Timão</p>
+        </div>
+      </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.CPF_USUARIO = json.cpf;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
