@@ -64,7 +64,7 @@ body {
   .banner {
     height: var(--tamanho-banner);
     color: white;
-    background-image: url('../assets/PlanoDeFundo.png');
+    background-image: url('imagens/PlanoDeFundo.png');
     background-size: cover;
     align-items: center;
     display: flex;

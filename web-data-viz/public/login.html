@@ -11,7 +11,7 @@
     <script src="./js/sessao.js"></script>
 
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" href="./assets/logo.png" />
+    <link rel="icon" href="css/imagens/logo.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
@@ -19,7 +19,7 @@
 
     <div class="header">
         <div class="container">
-          <img href="index.html" src="assets/logo2.png" class="titulo">
+          <img href="index.html" src="css/imagens/logo2.png" class="titulo">
           <ul class="navbar">
             <a href="index.html">Inicial</a>
             <li>|</li>
@@ -36,7 +36,7 @@
       </div>
       </div>
 
-      <form class="form-control" action="">
+      <div class="form-control" action="">
         <p class="title">Login</p>
         <div class="input-field">
           <input required="" class="input" type="text" id="email_input" />
@@ -46,8 +46,8 @@
           <input required="" class="input" type="password" id="senha_input" />
           <label class="label" for="input">Senha</label>
         </div>
-        <button class="submit-btn">Login</button>
-      </form>
+        <button class="submit-btn" onclick="entrar()">Login</button>
+      </div>
     
       <div class="footer">
         <div class="container">
@@ -62,7 +62,7 @@
 
 
     function entrar() {
-        aguardar();
+        // aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
@@ -103,7 +103,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "public/index.html";
+                        window.location = "index.html";
                     }, 100); // apenas para exibir o loading
 
                 });
