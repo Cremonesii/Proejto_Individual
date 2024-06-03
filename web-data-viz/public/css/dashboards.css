@@ -334,7 +334,7 @@ canvas {
 
 .header-left a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 .header-left {
@@ -348,8 +348,8 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
+  border-right: 3px solid red;
+  background-color: white;
 }
 
 .dash-right {
@@ -375,7 +375,7 @@ canvas {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: black;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -387,23 +387,26 @@ canvas {
 .btn-nav {
   width: 40%;
   color: white;
-  background-color: #e6005a;
+  background-color: red;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
+  margin:3%;
 }
 
 .btn-nav-white {
   width: 40%;
   background-color: white;
-  border: 3px solid #e6005a;
+  border: 3px solid black;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
+  margin:3%;
+
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: black;
   padding: 0;
   margin: 0;
 }
@@ -418,11 +421,12 @@ canvas {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
+  background-color: black;
   color: white;
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
   margin-bottom: 100px;
   cursor: pointer;
+  margin:3%;
 }

@@ -172,6 +172,10 @@ body {
   align-items: center;
   background-color: black;
   display: flex;
+  background-image: url("imagens/PladeDeFundoLoginECadastro.png");
+  background-size: cover;
+  width: 100%;
+
 }
 
 .login .container {
@@ -247,7 +251,7 @@ body {
 }
 .form-control {
   margin: 20px;
-  background-color: #ffffff;
+  background-color: #ffffff71;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   width: 400px;
   display: flex;
@@ -256,7 +260,6 @@ body {
   gap: 10px;
   padding: 25px;
   border-radius: 8px;
-  margin-left: 35%;
 }
 .title {
   font-size: 28px;
@@ -273,29 +276,28 @@ body {
   outline: none;
   border-radius: 8px;
   height: 45px;
-  border: 1.5px solid #ecedec;
+  border: 1.5px solid black;
   background: transparent;
   padding-left: 10px;
 }
 .input:focus {
-  border: 1.5px solid #2d79f3;
+  border: 1.5px solid red;
 }
 .input-field .label {
   position: absolute;
   top: 25px;
   left: 15px;
-  color: #ccc;
+  color: black;
   transition: all 0.3s ease;
   pointer-events: none;
   z-index: 2;
 }
 .input-field .input:focus ~ .label,
 .input-field .input:valid ~ .label {
-  top: 5px;
+  top: 0px;
   left: 5px;
   font-size: 12px;
   color: red;
-  background-color: #ffffff;
   padding-left: 5px;
   padding-right: 5px;
 }

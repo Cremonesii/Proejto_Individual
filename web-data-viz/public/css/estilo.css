@@ -353,6 +353,10 @@ input {
   animation-iteration-count: infinite;
 }
 
+.imgTitulo{
+  width: 210px;
+  height: 210px;
+}
 @keyframes bell {
   0%   {transform: rotate(25deg)}
   25%  {transform: rotate(-25deg)}

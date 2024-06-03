@@ -36,6 +36,7 @@
       </div>
       </div>
 
+      <div class="cadastro">
       <div class="form-control" action="">
         <p class="title">Login</p>
         <div class="input-field">
@@ -48,7 +49,7 @@
         </div>
         <button class="submit-btn" onclick="entrar()">Login</button>
       </div>
-    
+    </div>
       <div class="footer">
         <div class="container">
           <p>Timão</p>
@@ -103,7 +104,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "index.html";
+                        window.location = "dashboard.html";
                     }, 100); // apenas para exibir o loading
 
                 });

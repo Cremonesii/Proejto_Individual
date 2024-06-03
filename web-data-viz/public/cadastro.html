@@ -36,27 +36,29 @@
     </div>
   </div>
   <!--header fim-->
-
-  <div class="form-control" action="">
-    <p class="title">Cadastro</p>
-    <div class="input-field">
-      <input required="" class="input" type="text" id="email_input"/>
-      <label class="label" for="input">Email</label>
+  <div class="cadastro">
+    <div class="form-control" action="">
+      <p class="title">Cadastro</p>
+      <div class="input-field">
+        <input required="" class="input" type="text" id="email_input"/>
+        <label class="label" for="input">Email</label>
+      </div>
+      <div class="input-field">
+        <input required="" class="input" type="text" id="usuario_input"/>
+        <label class="label" for="input">Usuario</label>
+      </div>
+      <div class="input-field">
+        <input required="" class="input" type="text" id="nome_input"/>
+        <label class="label" for="input">Nome Completo</label>
+      </div>
+      <div class="input-field">
+        <input required="" class="input" type="password" id="senha_input"/>
+        <label class="label" for="input">Senha</label>
+      </div>
+      <button class="submit-btn" onclick="cadastrar()">Cadastrar</button>
     </div>
-    <div class="input-field">
-      <input required="" class="input" type="text" id="usuario_input"/>
-      <label class="label" for="input">Usuario</label>
-    </div>
-    <div class="input-field">
-      <input required="" class="input" type="text" id="nome_input"/>
-      <label class="label" for="input">Nome Completo</label>
-    </div>
-    <div class="input-field">
-      <input required="" class="input" type="password" id="senha_input"/>
-      <label class="label" for="input">Senha</label>
-    </div>
-    <button class="submit-btn" onclick="cadastrar()">Cadastrar</button>
   </div>
+  
         <div id="div_aguardar" class="loading-div">
           <!-- <img src="./assets/circle-loading.gif" id="loading-gif" /> -->
         </div>
