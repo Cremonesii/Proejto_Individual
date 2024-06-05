@@ -15,8 +15,9 @@ body {
 
 .dash-right .avisos {
   width: 100%;
-  color: rgb(216, 216, 216);
+  color: black;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
 }
 
 .dash-right .avisos .container {
@@ -44,7 +45,7 @@ body {
 
 .dash-right .avisos .div-form textarea {
   width: 95%;
-  border: 3px solid #e6005a;
+  border: 3px solid white;
   background-color: white;
   border-radius: 5px;
 }
@@ -57,10 +58,28 @@ body {
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
-  width: 120px;
+  color: black;
+  background-color: white;  
 }
+
+.maiores_contribuidores{
+    color: #fff;
+    font-weight: bold;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    width: 180px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: black;
+  }
+  
+.maiores_contribuidores:hover {
+    background-color: red;
+    color: #ffffff;
+  }
+
 
 .publicacao-btn-editar {
   cursor: pointer;
@@ -70,8 +89,8 @@ body {
   font-weight: 600;
   font-size: 14px;
   padding: 5px 8px;
-  color: white;
-  background-color: #e6005a;
+  color: black;
+  background-color: white;
   width: 80px;
 }
 
@@ -82,7 +101,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  border-bottom: 3px solid #e6005a;
+  border-bottom: 3px solid white;
   padding: 20px;
 }
 
@@ -115,14 +134,18 @@ body {
   background-color: #212124;
 }
 
-.dash {
-  width: 80%;
-  position: relative;
-  top: 0;
-  left: 20%;
-  background-color: #161618;
-  height: 100vh;
-  overflow: auto;
+/* COMO FUNCIONA */
+
+.como_funciona{
+  background-color: white;
+  border-radius: 3px;
+  border-color: black;
+  color: black;
+  height: 20px;
+  width:20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 .area-parametros-alerta {
@@ -385,26 +408,38 @@ canvas {
 }
 
 .btn-nav {
-  width: 40%;
-  color: white;
-  background-color: red;
-  border-radius: 5px;
+  width: 100%;
+  color: black;
   text-align: center;
-  padding: 2% 5%;
+  display: flex;
   margin:3%;
+  height: 8%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  
+}
+.btn-nav:hover {
+  background-color: grey;
+
 }
 
 .btn-nav-white {
-  width: 40%;
-  background-color: white;
-  border: 3px solid black;
-  border-radius: 5px;
+  width: 100%;
+  color: black;
   text-align: center;
-  padding: 2% 5%;
+  display: flex;
   margin:3%;
+  height: 8%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  
+}
+.btn-nav-white:hover {
+  background-color: grey;
 
 }
-
 .btn-nav-white h3 {
   color: black;
   padding: 0;

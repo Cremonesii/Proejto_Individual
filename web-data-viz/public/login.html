@@ -101,8 +101,8 @@
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.SENHA_USUARIO = json.senha;
-                    sessionStorage.ID_USUARIO = json.id;
-
+                    sessionStorage.ID_USUARIO = json.idCadastro;
+                    sessionStorage.NOME_USUARIO = json.usuario;
                     setTimeout(function () {
                         window.location = "dashboard.html";
                     }, 100); // apenas para exibir o loading

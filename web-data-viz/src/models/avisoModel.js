@@ -8,13 +8,14 @@ function listar() {
             a.titulo,
             a.descricao,
             a.fk_usuario,
-            u.id AS idUsuario,
-            u.nome,
-            u.email,
-            u.senha
+            c.idCadastro AS id,
+            c.usuario,
+            c.nome,
+            c.email,
+            c.senha
         FROM aviso a
-            INNER JOIN usuario u
-                ON a.fk_usuario = u.id;
+            INNER JOIN cadastro c
+                ON a.fk_usuario = c.idCadastro;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
