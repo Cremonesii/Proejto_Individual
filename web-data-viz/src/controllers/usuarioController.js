@@ -85,7 +85,30 @@ function cadastrar(req, res) {
     }
 }
 
+function respota_quiz(req, res){
+    var certo = req.body.respostaCorretaServer;
+    var errado = req.body.respostaIncorretaServer;
+    var idUsuario = req.body.idUsuarioServer;
+
+    usuarioModel.respota_quiz(certo, errado, idUsuario)
+        .then(
+            function (resultado){
+                res.json(resultado);
+            }
+        ).catch(
+            function(erro){
+                console.log(erro);
+                console.log(
+                    "\n Houve um problema ao realizar o cadastro do quiz",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage)
+            }
+        )
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    respota_quiz
 }

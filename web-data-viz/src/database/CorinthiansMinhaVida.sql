@@ -13,9 +13,15 @@ senha varchar(45)
 
 create table score (
 idScore int primary key auto_increment,
-saldo varchar(45),
-dtScore datetime
+acerto int,
+erro int,
+fkUsuario int,
+ FOREIGN KEY (fkUsuario) REFERENCES cadastro(idCadastro)
 );
+
+select * from score;
+
+select acerto, erro from score where idScore = (select max(idScore) from score where fkUsuario = idCadastro);
 
 create table cadastroScore(
 idCadastroScore int,
@@ -31,6 +37,7 @@ CREATE TABLE aviso (
 	fk_usuario INT,
 	FOREIGN KEY (fk_usuario) REFERENCES cadastro(idCadastro)
 );
+
 
 select * from cadastro;
 

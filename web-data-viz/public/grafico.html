@@ -23,7 +23,7 @@
 <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
-<body onload=" atualizarFeed()">
+<body onload="obterDadosGrafico()">
 
     <div class="janela">
         <div class="header-left">
@@ -57,8 +57,103 @@
                 <h3>Sair</h3>
             </div>
 
+            <div class="hello" style="display: none;">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
         </div>
+
+    </div>
+
+    
+    <div id="grafico" style="margin-left: 50%">
+
     </div>
 </body>
 
 </html>
+
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    
+    var idUsuario = sessionStorage.ID_USUARIO;
+
+    function obterDadosGrafico() {
+
+        document.getElementById("grafico").innerHTML += `<canvas style="width: 100%; height: 100%;" id="myChartCanvas"> </canvas>`
+
+        fetch(`/medidas/grafico_quiz/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    plotarGrafico(resposta, idUsuario);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta, idUsuario) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: ['Acertos', 'Erros'],
+            datasets: [{
+                label: 'Desempenho',
+                data: [],
+                fill: false,
+                borderColor: 'transperent',
+                backgroundColor: ['Green', 'Red']
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.acerto);
+            labels.push(registro.erro);
+            dados.datasets[0].data.push(registro.acerto);
+            dados.datasets[0].data.push(registro.erro);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'pie',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas`),
+            config
+        );
+
+        // setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 2000);2
+    }
+</script>

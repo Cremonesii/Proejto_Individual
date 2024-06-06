@@ -164,6 +164,7 @@ function createQuestion(i) {
   });
 
   // incrementar o número da questão
+  // Total de Qustões
   actualQuestion++;
 }
 
@@ -180,6 +181,7 @@ function checkAnswer(btn) {
       // checa se usuário acertou a pergunta
       if (btn === button) {
         // incremento dos pontos
+        //O que ele acertou
         points++;
       }
     } else {
@@ -230,6 +232,26 @@ function showSuccessMessage() {
 function hideOrShowQuizz() {
   quizzContainer.classList.toggle('hide');
   scoreContainer.classList.toggle('hide');
+}
+
+//Grafico quizz
+function respota_quiz(){
+
+  var certo = points;
+  var errado = actualQuestion - points;
+
+  fetch("/usuarios/respota_quiz",{
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      respostaCorretaServer: certo,
+      respostaIncorretaServer: errado,
+      idUsuarioServer: sessionStorage.ID_USUARIO,
+    }),
+  })
+
 }
 
 // reiniciar quizz
