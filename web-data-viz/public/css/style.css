@@ -42,6 +42,48 @@ body {
     font-weight: 800;
   }
   
+  .corpo5{
+    display: flex;
+    height: auto;
+    background-color: black;
+    justify-content: space-around;
+    font-family: "Poppins", sans-serif;
+    align-items: center;
+    
+  }
+  
+  .corpo5 p{
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+  }
+  .imgfooter {
+    width: 18vh;
+    height: 10vh;
+  }
+  
+  .corpo5 li{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 500px;
+    justify-content: space-around;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    align-items: center;
+  }
+  
+  .corpo5 a {
+    text-decoration: none;
+    color: white;
+
+  }
+
   .navbar {
     width: 300px;
     display: flex;
