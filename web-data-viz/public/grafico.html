@@ -64,10 +64,15 @@
 
     </div>
 
-    
-    <div id="grafico" style="margin-left: 50%">
+        <div class="quiz-grafico">
+            <h1>Seu último desempenho no Quiz</h1>
+            <div id="grafico" class="grafico">
+            </div>
+        </div>
+            
 
-    </div>
+   
+    
 </body>
 
 </html>
@@ -80,7 +85,7 @@
 
     function obterDadosGrafico() {
 
-        document.getElementById("grafico").innerHTML += `<canvas style="width: 100%; height: 100%;" id="myChartCanvas"> </canvas>`
+        document.getElementById("grafico").innerHTML += `<canvas style="width: 50%; height: 50%;" id="myChartCanvas"> </canvas>`
 
         fetch(`/medidas/grafico_quiz/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
@@ -116,7 +121,7 @@
                 label: 'Desempenho',
                 data: [],
                 fill: false,
-                borderColor: 'transperent',
+                borderColor: 'White',
                 backgroundColor: ['Green', 'Red']
             }]
         };

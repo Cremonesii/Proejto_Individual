@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
   background-color: white;
 }
 
@@ -167,6 +168,14 @@ body {
   justify-content: center;
 }
 
+.sobreCorinthiansEu {
+  background-color: white;
+  color: black;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .titulosdocorinthians{
   background-color: white;
   color: black;
@@ -178,10 +187,19 @@ body {
 
 .textoSobreoCorinthians{
   display: flex;
+  width: 100%;
+  justify-content: space-between;
   flex-direction: row;
   padding: 5%;
 }
-
+.textoTitulos{
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  flex-direction: row;
+  /* padding: 5%; */
+  margin-right: 15%;
+}
 .imgSimbolos {
   width: 400px;
   display: flex;
@@ -191,6 +209,46 @@ body {
   padding: 25px;
   border-radius: 8px;
 }
+
+.imgEu {
+  width: 100px;
+  height: 600px;
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+  gap: 10px;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.imgSimbolos1 {
+  width: 400px;
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+  gap: 10px;
+  padding: 25px;
+  border-radius: 8px;
+}
+.qtdTitulo{
+  font-weight: 1000;
+}
+.história-titulo{
+  margin: 20px;
+  width: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  padding: 25px;
+  border-radius: 8px;
+  border-color: white;
+  background-color: black;
+  color: white;
+}
+
 .história {
   margin: 20px;
   width: 700px;
@@ -199,6 +257,7 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 10px;
+  height: 100%;
   padding: 25px;
   border-radius: 8px;
   border-color: white;
@@ -206,9 +265,35 @@ body {
   color: black;
 }
 
-.sobre-mim {
+.história-eu {
+  /* margin ri: 20px; */
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  padding: 25px;
+  border-radius: 8px;
+  border-color: white;
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.sobre-blog {
   background-color: black;
   color: white;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.sobre-mim {
+  background-color: white;
+  color: black;
   align-items: center;
   display: flex;
   flex-direction: column;

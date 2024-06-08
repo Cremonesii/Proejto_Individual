@@ -19,6 +19,7 @@ body {
   display: flex;
   width: 80%;
   margin: auto;
+  
 }
 
 .header {
@@ -375,6 +376,32 @@ input {
   width: 30%;
 }
 
+.quiz-grafico{
+  height: auto;
+  width: 900px;
+  margin-left: 30%;
+  border: 2px solid red;
+  margin-top: 10%;
+  background-color: black;
+  color: white;
+  align-items: center;
+  display: flex ;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.quiz-grafico hr {
+  color: white;
+}
+
+.grafico{
+  width: 25%; 
+  height: 50%;
+  padding: 5%;
+  color: white;
+}
+
 .Explicao_timaooo{
   background-color: white;
   margin-left: 25%;
@@ -394,6 +421,7 @@ input {
   border-color: red;
   text-align: center;
   width: 30%;
+  margin-top: -57%;
 }
 
 @keyframes bell {

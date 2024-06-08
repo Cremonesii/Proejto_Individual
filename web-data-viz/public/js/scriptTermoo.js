@@ -10,7 +10,7 @@ var wordList; // Lista de palavras a ser obtida do Gist
 var word = ""; // Palavra atual a ser adivinhada
 
 // URL raw do Gist com a lista de palavras
-var GIST_URL = 'https://gist.githubusercontent.com/Cremonesii/80ae01c52c6d65708ad0b0a324f94528/raw/cb857fa796b3c1b54b6603c7c4db36a76e11b542/gistfile1.txt';
+var GIST_URL = 'https://gist.githubusercontent.com/Cremonesii/80ae01c52c6d65708ad0b0a324f94528/raw/34459a8b36f6fc8e5c244f437775f509e314c5b9/gistfile1.txt';
 
 window.onload = function () {
     carregarListaPalavras(GIST_URL)

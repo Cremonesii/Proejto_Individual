@@ -8,6 +8,9 @@ body {
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+a{
+  text-decoration: none;
+}
 .label-captura {
   display: flex;
   justify-content: center;
@@ -15,6 +18,8 @@ body {
 
 .dash-right .avisos {
   width: 100%;
+  background-color: black;
+  margin-left: 20%;
   color: black;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
@@ -62,6 +67,9 @@ body {
   background-color: white;  
 }
 
+.maiores_contribuidores a {
+  color: white;
+}
 .maiores_contribuidores{
     color: #fff;
     font-weight: bold;
@@ -377,13 +385,11 @@ canvas {
 
 .dash-right {
   display: flex;
-  width: 70%;
+  width: 100%;
   height: fit-content;
   background-color: #161618;
   position: relative;
-  top: 0;
-  left: 25%;
-  height: 100vh;
+  height: 100%;
   overflow: auto;
 }
 
