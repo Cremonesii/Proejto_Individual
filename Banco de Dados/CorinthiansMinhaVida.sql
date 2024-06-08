@@ -6,7 +6,6 @@ create table cadastro (
 idCadastro int primary key auto_increment,
 usuario varchar(45),
 nome varchar(45),
-dtNasc date,
 email varchar(75),
 senha varchar(45)
 );
@@ -19,17 +18,6 @@ fkUsuario int,
  FOREIGN KEY (fkUsuario) REFERENCES cadastro(idCadastro)
 );
 
-select * from score;
-
-select acerto, erro from score where idScore = (select max(idScore) from score where fkUsuario = idCadastro);
-
-create table cadastroScore(
-idCadastroScore int,
-fkCadastro int,
-fkScore int,
-primary key (fkCadastro, fkScore, idCadastroScore)
-);
-
 CREATE TABLE aviso (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
@@ -38,9 +26,14 @@ CREATE TABLE aviso (
 	FOREIGN KEY (fk_usuario) REFERENCES cadastro(idCadastro)
 );
 
-
 select * from cadastro;
+select * from score;
+select * from aviso;
 
+-- SELECT PARA VER O QUIZ
+select acerto, erro from score where idScore = (select max(idScore) from score where fkUsuario = idCadastro);
+
+-- SELECT PARA VER AS MENSAGENS NO CHAT
 SELECT 
             a.id AS idAviso,
             a.titulo,
